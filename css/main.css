@@ -57,7 +57,7 @@ main {
   color: #ffffff;
   line-height: 1.5em;
   font-size: 1.25em;
-  width: 30%;
+  width: 29%;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -68,11 +68,12 @@ main {
 .flex-items span {
   font-size: 1.25em;
 }
-.div-1, .div-2 {
+#div-1, #div-2 {
   border-right: #cacfd2 solid 1px;
 }
 
 h1 {
+    font-family: 'Caveat Brush', cursive;
     font-size: 6em;
 }
 
@@ -86,28 +87,68 @@ p {
 
 /***** FOOTER *****/
 
-img {
-    height: 40px;
+ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-flow: row nowrap;
 }
 
+img {
+    height: 40px;
+    margin-top: 40px;
+}
+
 
 /***** MEDIA QUERIES *****/
 
-media all and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 1199px) {
+  header {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  main {
+    height: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .flex-items {
+    margin-top: 1em;
+    width: 25%;
+    height: auto;
+  }
+}
+
+@media all and (max-width: 767px) {
   .flex-container {
-    flex-direction: column;
+    flex-flow: column nowrap;
     align-items: center;
   }
 
-  .div-1, .div-2 {
+  header {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  main {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+
+  #div-1, #div-2 {
     border-right: none;
   }
 
-  .div-1, .div-2, .div-3 {
+  .flex-items {
+    margin-top: 1em;
     width: 100%;
+    flex-direction: column;
+    align-items: center;
   }
 }
